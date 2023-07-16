@@ -13,11 +13,10 @@ public class Laptop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private Integer laptopId;
     private String name;
     private String brand;
     private Integer price;
-
     @OneToOne
     private Student student;
 }

@@ -10,7 +10,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private Integer studentId;
     private String name;
     private String age;
     private String phoneNumber;
@@ -19,4 +19,5 @@ public class Student {
 
     @OneToOne
     private Address address;
+
 }
