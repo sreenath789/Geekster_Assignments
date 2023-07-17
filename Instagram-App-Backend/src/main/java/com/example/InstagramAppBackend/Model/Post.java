@@ -27,6 +27,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "fk_post_user_id")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)//to hide in json
     private User postOwner;
 
 }

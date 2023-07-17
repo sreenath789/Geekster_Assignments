@@ -22,7 +22,25 @@ public class PostService {
         return "Post Uploaded!";
     }
 
-    public List<Post> getAllPosts(User postOwner) {
-        return iPostRepo.findAllByPostOwner(postOwner);
+    public String removeInstaPost(Integer postId, User user) {
+        Post post = iPostRepo.findById(postId).orElse(null);
+        if(post!=null && post.getPostOwner().equals(user)){
+            iPostRepo.delete(post);
+            return "Post removed successfully!";
+        }
+        else if(post==null){
+            return "Post to be deleted does not exist";
+        }
+        else{
+            return "Un-Authorized delete detected....Not allowed";
+        }
+    }
+
+    public boolean validatePost(Post instaPost) {
+        return (instaPost!=null && iPostRepo.existsById(instaPost.getPostId()));
+    }
+
+    public Post getPostById(Integer postId) {
+        return iPostRepo.findById(postId).orElse(null);
     }
 }
