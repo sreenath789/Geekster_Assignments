@@ -71,19 +71,7 @@ spring.jpa.properties.hibernate.format_sql=true
 The Job data model is defined in the Job class, which has the following attributes:
 <br>
 
-* Student Model
-```
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer studentId;
-    private String name;
-    private String age;
-    private String phoneNumber;
-    private String branch;
-    private String department;
-    @OneToOne
-    private Address address;
-```
+
 
 * Hotel Model
 ```
